@@ -1,0 +1,13 @@
+{
+  "name": "Sneakemail Filler",
+  "version": "0.1",
+  "description": "Finds or generates a sneakemail address for an email field, via context menu",
+  "permissions": [
+    "contextMenus",
+    "tabs", "http://*/", "https://*/"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "manifest_version": 2
+}
