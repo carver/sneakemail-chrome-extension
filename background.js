@@ -62,6 +62,7 @@ function searchAddress(emailLabel, userID, targetField){
                 setField(targetField, found.val());
             else
                 createAddress($scratch, userID, emailLabel, targetField);
+            $scratch.html('');
         },
         error : function() {
             console.log('failed on search');
