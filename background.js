@@ -1,9 +1,22 @@
 
+// insert text to active element
+function setField(text) {
+    chrome.tabs.executeScript(null, 
+        {code:"document.activeElement.value = '"+text+"';"});
+}
+
 // insert sneakemail address to active page element
 function insertAddress(info, tab) {
-  chrome.tabs.executeScript(null, 
-      {code:"document.activeElement.value = '"+info.menuItemId+"';"});
-  
+  $.ajax('http://httpbin.org/get', {
+    dataType: "json",
+    success : function(data) {
+        setField(data.origin);
+    },
+    error : function() {
+        console.log('failed to get ajax response');
+        setField('Castle of AAARRRGHHH...');
+    },
+  });
 }
 
 var title = "Sneakemail address here";
