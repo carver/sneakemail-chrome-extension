@@ -7,7 +7,10 @@
     "tabs", "http://*/", "https://*/"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+        "background.js",
+        "jquery-1.9.0.min.js"
+    ]
   },
   "manifest_version": 2
 }
