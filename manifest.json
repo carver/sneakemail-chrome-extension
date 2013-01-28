@@ -1,7 +1,7 @@
 {
   "name": "Sneakemail Filler",
-  "version": "0.5",
-  "description": "Finds or generates a sneakemail address for an email field, via context menu",
+  "version": "0.6",
+  "description": "Finds or generates a sneakemail address for an email field, via context menu. Thanks to Benjamin Humphrey and ipapun for the icons.",
   "permissions": [
     "contextMenus",
     "tabs", "http://*/", "https://*/"
@@ -13,6 +13,12 @@
     "default_name": "Sneakemail Login Info",
     "default_icon": "icon16.png",
     "default_popup": "login-popup.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "64": "icon64.png",
+    "128": "icon128.png"
   },
   "manifest_version": 2
 }
