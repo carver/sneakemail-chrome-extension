@@ -7,3 +7,7 @@ $(document).ready(function () {
         window.close();
     });
 });
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-302125-10']);
+_gaq.push(['_trackPageview']);

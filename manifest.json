@@ -1,6 +1,6 @@
 {
   "name": "Sneakemail Filler",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Make a sneakemail address for an email field, via context menu. Thanks to Benjamin Humphrey and ipapun for the icons.",
   "permissions": [
     "contextMenus",
