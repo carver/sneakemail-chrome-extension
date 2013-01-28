@@ -46,7 +46,7 @@ function insertAddress(info, tab) {
     
     if (!isAuthAvailable()){
         chrome.pageAction.show(tab.id);
-        setField(field, 'Please add login and try again');
+        setField(field, 'Login top right & try again');
         return;
     }
     
