@@ -26,3 +26,7 @@ Until I set up a UI and localStorage scheme for authentication, store your own l
 
 AGPL 
 Copyright 2013 Jason Carver
+
+*Credits*
+
+Thanks to Benjamin Humphrey and ipapun for the icons!
