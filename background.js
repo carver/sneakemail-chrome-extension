@@ -21,7 +21,10 @@ function setField(field, text) {
 function findUserID(homepageHTML) {
     var re = /folders\/(\d*)\/name/;
     matches = homepageHTML.match(re);
-    return matches[1];
+    if(!matches)
+        return null;
+    else
+        return matches[1];
 }
 
 //convert the page url to the appropriate sneakemail name to search/create
@@ -42,7 +45,12 @@ function insertAddress(info, tab) {
         data : credentials, //specified in auth.js file (see readme)
         success : function(data, textStatus, jqXHR) {
             var userID = findUserID(data);
-            searchAddress(emailLabel, userID, field)
+            if(!userID) {
+                chrome.pageAction.show(tab.id);
+                setField(field, 'Sneakemail Login Failed');
+            }
+            else
+                searchAddress(emailLabel, userID, field)
         },
         error : function() {
             console.log('failed on login call');
