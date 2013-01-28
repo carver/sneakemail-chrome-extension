@@ -9,5 +9,10 @@
   "background": {
     "page": "background.html"
   },
+  "page_action": {
+    "default_name": "Sneakemail Login Info",
+    "default_icon": "icon16.png",
+    "default_popup": "login-popup.html"
+  },
   "manifest_version": 2
 }

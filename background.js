@@ -34,15 +34,33 @@ function urlToSneakemailName(url) {
     return domains[domains.length-2]+'.'+domains[domains.length-1];
 }
 
+//Confirm username/password are saved
+function isAuthAvailable(){
+    return localStorage.username && localStorage.password;
+}
+
 // insert sneakemail address to active page element
 function insertAddress(info, tab) {
     var field = captureInputField(tab);
+    setField(field, 'Sneakemail Filler init...');
+    
+    if (!isAuthAvailable()){
+        chrome.pageAction.show(tab.id);
+        setField(field, 'Please add login and try again');
+        return;
+    }
+    
     var emailLabel = urlToSneakemailName(info.pageUrl);
     setField(field, emailLabel+': Logging in...');
+    login_info = {
+        username : localStorage.username,
+        password : localStorage.password,
+        remember_me : "true"
+    }
     //login
     $.ajax('https://sneakemail.com/public/auth', {
         type : 'post',
-        data : credentials, //specified in auth.js file (see readme)
+        data : login_info,
         success : function(data, textStatus, jqXHR) {
             var userID = findUserID(data);
             if(!userID) {
