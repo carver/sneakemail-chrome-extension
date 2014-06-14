@@ -107,6 +107,7 @@ function createAddress($newFormPage, userID, emailLabel, targetField){
     $newFormPage.find('form:last input').each(function(index) {
         createData[this.name] = this.value;
     });
+    delete createData['grey'];
     
     var url = 'https://sneakemail.com'+$newFormPage.find('form:last').attr('action');
     
